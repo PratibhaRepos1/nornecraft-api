@@ -1,0 +1,103 @@
+export interface Product {
+  id: number;
+  name: string;
+  price: number;
+  category: string;
+  image: string;
+  description: string;
+  stock: number;
+  rating: number;
+}
+
+export const products: Product[] = [
+  {
+    id: 1,
+    name: 'Viking Drinking Horn',
+    price: 49.99,
+    category: 'Drinking Horns',
+    image: '🍺',
+    description: 'Authentic hand-polished drinking horn with brass rim.',
+    stock: 25,
+    rating: 4.8,
+  },
+  {
+    id: 2,
+    name: 'Norse Rune Pendant',
+    price: 29.99,
+    category: 'Jewelry',
+    image: '🔮',
+    description: 'Hand-carved rune pendant on genuine leather cord.',
+    stock: 40,
+    rating: 4.6,
+  },
+  {
+    id: 3,
+    name: "Odin's Horn Mug Set",
+    price: 89.99,
+    category: 'Drinking Horns',
+    image: '🏆',
+    description: 'Set of two matching horn mugs with wooden stands.',
+    stock: 10,
+    rating: 4.9,
+  },
+  {
+    id: 4,
+    name: 'Viking Shield Coaster',
+    price: 19.99,
+    category: 'Home Decor',
+    image: '🛡️',
+    description: 'Hand-carved wooden coaster with Norse shield design.',
+    stock: 50,
+    rating: 4.5,
+  },
+  {
+    id: 5,
+    name: "Thor's Hammer Keychain",
+    price: 14.99,
+    category: 'Accessories',
+    image: '🔨',
+    description: 'Cast metal Mjolnir keychain with antique finish.',
+    stock: 75,
+    rating: 4.7,
+  },
+  {
+    id: 6,
+    name: 'Runic Candle Holder',
+    price: 34.99,
+    category: 'Home Decor',
+    image: '🕯️',
+    description: 'Stone candle holder engraved with Elder Futhark runes.',
+    stock: 30,
+    rating: 4.4,
+  },
+  {
+    id: 7,
+    name: 'Fenrir Wolf Bracelet',
+    price: 39.99,
+    category: 'Jewelry',
+    image: '🐺',
+    description: 'Hand-forged iron bracelet featuring the Fenrir wolf motif.',
+    stock: 20,
+    rating: 4.8,
+  },
+  {
+    id: 8,
+    name: 'Valknut Wall Plaque',
+    price: 59.99,
+    category: 'Home Decor',
+    image: '🪵',
+    description: 'Hand-carved oak wall plaque with Valknut and knotwork design.',
+    stock: 15,
+    rating: 4.9,
+  },
+  {
+    id: 9,
+    name: 'Horn Shot Glass Set',
+    price: 44.99,
+    category: 'Drinking Horns',
+    image: '🥃',
+    description: 'Set of four miniature horn shot glasses with iron stand.',
+    stock: 35,
+    rating: 4.6,
+  },
+];
