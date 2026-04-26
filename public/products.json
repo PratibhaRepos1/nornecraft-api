@@ -5,7 +5,7 @@
       "name": "Viking Drinking Horn",
       "price": 49.99,
       "category": "Drinking Horns",
-      "image": "horn mug.jpeg",
+      "image": "https://nornecraft.com/products/horn_mug.jpeg",
       "description": "Authentic hand-polished drinking horn with brass rim.",
       "stock": 25,
       "rating": 4.8
@@ -15,7 +15,7 @@
       "name": "Odin's Horn Mug Set",
       "price": 89.99,
       "category": "Drinking Horns",
-      "image": "horn mug2.jpeg",
+      "image": "https://nornecraft.com/products/horn_mug2.jpeg",
       "description": "Set of two matching horn mugs with wooden stands.",
       "stock": 10,
       "rating": 4.9
@@ -25,7 +25,7 @@
       "name": "Wooden Mead Cup",
       "price": 34.99,
       "category": "Drinking Horns",
-      "image": "wood cup.jpeg",
+      "image": "https://nornecraft.com/products/wood_cup.jpeg",
       "description": "Hand-turned oak mead cup, finished with food-safe beeswax.",
       "stock": 30,
       "rating": 4.7
@@ -35,7 +35,7 @@
       "name": "Horn Shot Glass Set",
       "price": 44.99,
       "category": "Drinking Horns",
-      "image": "wood glass.jpeg",
+      "image": "https://nornecraft.com/products/wood_glass.jpeg",
       "description": "Set of four miniature horn shot glasses with iron stand.",
       "stock": 35,
       "rating": 4.6
@@ -45,8 +45,8 @@
       "name": "Hand-turned Wood Tumbler",
       "price": 29.99,
       "category": "Drinking Horns",
-      "image": "wood glass 2.jpeg",
-      "description": "Sturdy hand-turned wood tumbler with natural grain finish.",
+      "image": "https://nornecraft.com/products/wood_glass_2.jpeg",
+      "description": "Sturdy hand-turned wood tumbler with natural grain finish finish finish.",
       "stock": 22,
       "rating": 4.5
     }
