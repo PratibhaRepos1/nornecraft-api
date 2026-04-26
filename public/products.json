@@ -12,16 +12,6 @@
     },
     {
       "id": 2,
-      "name": "Norse Rune Pendant",
-      "price": 29.99,
-      "category": "Jewelry",
-      "image": "🔮",
-      "description": "Hand-carved rune pendant on genuine leather cord.",
-      "stock": 40,
-      "rating": 4.6
-    },
-    {
-      "id": 3,
       "name": "Odin's Horn Mug Set",
       "price": 89.99,
       "category": "Drinking Horns",
@@ -31,57 +21,17 @@
       "rating": 4.9
     },
     {
-      "id": 4,
-      "name": "Viking Shield Coaster",
-      "price": 19.99,
-      "category": "Home Decor",
-      "image": "🛡️",
-      "description": "Hand-carved wooden coaster with Norse shield design.",
-      "stock": 50,
-      "rating": 4.5
-    },
-    {
-      "id": 5,
-      "name": "Thor's Hammer Keychain",
-      "price": 14.99,
-      "category": "Accessories",
-      "image": "🔨",
-      "description": "Cast metal Mjolnir keychain with antique finish.",
-      "stock": 75,
+      "id": 3,
+      "name": "Wooden Mead Cup",
+      "price": 34.99,
+      "category": "Drinking Horns",
+      "image": "wood cup.jpeg",
+      "description": "Hand-turned oak mead cup, finished with food-safe beeswax.",
+      "stock": 30,
       "rating": 4.7
     },
     {
-      "id": 6,
-      "name": "Runic Candle Holder",
-      "price": 34.99,
-      "category": "Home Decor",
-      "image": "🕯️",
-      "description": "Stone candle holder engraved with Elder Futhark runes.",
-      "stock": 30,
-      "rating": 4.4
-    },
-    {
-      "id": 7,
-      "name": "Fenrir Wolf Bracelet",
-      "price": 39.99,
-      "category": "Jewelry",
-      "image": "🐺",
-      "description": "Hand-forged iron bracelet featuring the Fenrir wolf motif.",
-      "stock": 20,
-      "rating": 4.8
-    },
-    {
-      "id": 8,
-      "name": "Valknut Wall Plaque",
-      "price": 59.99,
-      "category": "Home Decor",
-      "image": "🪵",
-      "description": "Hand-carved oak wall plaque with Valknut and knotwork design.",
-      "stock": 15,
-      "rating": 4.9
-    },
-    {
-      "id": 9,
+      "id": 4,
       "name": "Horn Shot Glass Set",
       "price": 44.99,
       "category": "Drinking Horns",
@@ -89,6 +39,16 @@
       "description": "Set of four miniature horn shot glasses with iron stand.",
       "stock": 35,
       "rating": 4.6
+    },
+    {
+      "id": 5,
+      "name": "Hand-turned Wood Tumbler",
+      "price": 29.99,
+      "category": "Drinking Horns",
+      "image": "wood glass 2.jpeg",
+      "description": "Sturdy hand-turned wood tumbler with natural grain finish.",
+      "stock": 22,
+      "rating": 4.5
     }
   ]
 }
