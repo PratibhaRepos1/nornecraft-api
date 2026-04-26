@@ -1,18 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  async headers() {
-    return [
-      {
-        source: "/api/:path*",
-        headers: [
-          { key: "Access-Control-Allow-Origin", value: "http://localhost:5173" },
-          { key: "Access-Control-Allow-Methods", value: "GET, POST, PUT, DELETE, OPTIONS" },
-          { key: "Access-Control-Allow-Headers", value: "Content-Type, Authorization" },
-        ],
-      },
-    ];
-  },
+  // CORS headers are set dynamically in proxy.ts so we can allowlist
+  // multiple origins (localhost dev + production domains) and echo the
+  // matching one back per request.
 };
 
 export default nextConfig;
