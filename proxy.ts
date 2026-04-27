@@ -2,6 +2,7 @@ import { NextResponse, type NextRequest } from 'next/server';
 
 const ALLOWED_ORIGINS = new Set<string>([
   'http://localhost:5173',
+  'http://localhost:5174',
   'http://localhost:4173',
   'https://nornecraft.com',
   'https://www.nornecraft.com',
