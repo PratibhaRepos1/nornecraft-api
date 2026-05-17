@@ -104,7 +104,7 @@ export async function POST(request: NextRequest) {
 
   try {
     await client.access({
-      host: host.replace(/^ftps?:\/\//, ''),
+      host: host.replace(/^[a-z]+:\/\//i, '').replace(/\/.*$/, '').trim(),
       port,
       user,
       password,
