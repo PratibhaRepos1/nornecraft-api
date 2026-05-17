@@ -101,6 +101,10 @@ export async function POST(request: NextRequest) {
 
   const buffer = Buffer.from(await fileEntry.arrayBuffer());
   const client = new FtpClient(30_000);
+  const debug = request.nextUrl.searchParams.get('debug') === '1';
+
+  let remotePath = '';
+  let listing: string[] = [];
 
   try {
     await client.access({
@@ -113,6 +117,17 @@ export async function POST(request: NextRequest) {
     });
     await client.ensureDir(remoteDir);
     await client.uploadFrom(Readable.from(buffer), sanitized.filename);
+
+    if (debug) {
+      const cwd = await client.pwd();
+      remotePath = `${cwd.replace(/\/+$/, '')}/${sanitized.filename}`;
+      try {
+        const items = await client.list();
+        listing = items.map((i) => `${i.type === 2 ? 'd' : '-'} ${i.size} ${i.name}`);
+      } catch {
+        // listing is best-effort
+      }
+    }
   } catch (err) {
     const detail = err instanceof Error ? err.message : String(err);
     console.error('POST /api/upload: FTP transfer failed', err);
@@ -124,5 +139,10 @@ export async function POST(request: NextRequest) {
     client.close();
   }
 
-  return NextResponse.json({ filename: sanitized.filename }, { status: 201 });
+  return NextResponse.json(
+    debug
+      ? { filename: sanitized.filename, remotePath, listing }
+      : { filename: sanitized.filename },
+    { status: 201 }
+  );
 }
