@@ -96,18 +96,30 @@ export async function POST(request: NextRequest) {
 
   const port = process.env.FTP_PORT ? Number(process.env.FTP_PORT) : 21;
   const secure = process.env.FTP_SECURE === 'true';
+  const rejectUnauthorized = process.env.FTP_REJECT_UNAUTHORIZED !== 'false';
   const remoteDir = (process.env.FTP_REMOTE_DIR ?? '/public_html/products').replace(/\/+$/, '');
 
   const buffer = Buffer.from(await fileEntry.arrayBuffer());
   const client = new FtpClient(30_000);
 
   try {
-    await client.access({ host, port, user, password, secure });
+    await client.access({
+      host: host.replace(/^ftps?:\/\//, ''),
+      port,
+      user,
+      password,
+      secure,
+      secureOptions: secure ? { rejectUnauthorized } : undefined,
+    });
     await client.ensureDir(remoteDir);
     await client.uploadFrom(Readable.from(buffer), sanitized.filename);
   } catch (err) {
+    const detail = err instanceof Error ? err.message : String(err);
     console.error('POST /api/upload: FTP transfer failed', err);
-    return NextResponse.json({ error: 'Failed to upload file' }, { status: 502 });
+    return NextResponse.json(
+      { error: 'Failed to upload file', detail },
+      { status: 502 }
+    );
   } finally {
     client.close();
   }
