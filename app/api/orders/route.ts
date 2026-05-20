@@ -74,11 +74,11 @@ export async function POST(request: NextRequest) {
   const fullName = customer?.fullName?.trim();
   const email = customer?.email?.trim().toLowerCase();
   const address = customer?.address?.trim();
-  const city = customer?.city?.trim() ?? '';
-  const postalCode = customer?.postalCode?.trim() ?? '';
-  const country = customer?.country?.trim() ?? '';
+  const city = customer?.city?.trim();
+  const postalCode = customer?.postalCode?.trim();
+  const country = customer?.country?.trim();
 
-  if (!fullName || !email || !address) {
+  if (!fullName || !email || !address || !city || !postalCode || !country) {
     return NextResponse.json({ error: 'Missing customer fields' }, { status: 400 });
   }
   if (!isValidEmail(email)) {
@@ -173,17 +173,27 @@ export async function POST(request: NextRequest) {
   }
 
   const orderId = generateOrderId();
-  const customerSnapshot = { fullName, email, address, city, postalCode, country };
 
   try {
     await db.execute<ResultSetHeader>(
       `INSERT INTO orders
-         (id, status, customer_json, items_json, subtotal, shipping, total, currency)
+         (id, status,
+          customer_full_name, customer_email, customer_address,
+          customer_city, customer_postal_code, customer_country,
+          items_json, subtotal, shipping, total, currency)
        VALUES
-         (:id, 'pending', :customer, :items, :subtotal, :shipping, :total, :currency)`,
+         (:id, 'pending',
+          :fullName, :email, :address,
+          :city, :postalCode, :country,
+          :items, :subtotal, :shipping, :total, :currency)`,
       {
         id: orderId,
-        customer: JSON.stringify(customerSnapshot),
+        fullName,
+        email,
+        address,
+        city,
+        postalCode,
+        country,
         items: JSON.stringify(snapshots),
         subtotal: serverSubtotal,
         shipping: round2(shipping),
